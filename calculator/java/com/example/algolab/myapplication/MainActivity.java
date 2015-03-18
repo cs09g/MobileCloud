@@ -44,30 +44,37 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
     public void onClick(View v){
         float num1, num2, result=0;
 
-        num1 = Float.parseFloat(etNum1.getText().toString());
-        num2 = Float.parseFloat(etNum2.getText().toString());
 
-        switch(v.getId()) {
-            case R.id.plusButton:
-                op = "+";
-                result = num1 + num2;
-                break;
-            case R.id.minusButton:
-                op = "-";
-                result = num1 - num2;
-                break;
-            case R.id.multiplyButton:
-                op = "*";
-                result = num1 * num2;
-                break;
-            case R.id.divisionButton:
-                op = "/";
-                result = num1 / num2;
-                break;
-            default:
-                break;
+        try {
+            num1 = Float.parseFloat(etNum1.getText().toString());
+            num2 = Float.parseFloat(etNum2.getText().toString());
+
+            switch (v.getId()) {
+                case R.id.plusButton:
+                    op = "+";
+                    result = num1 + num2;
+                    break;
+                case R.id.minusButton:
+                    op = "-";
+                    result = num1 - num2;
+                    break;
+                case R.id.multiplyButton:
+                    op = "*";
+                    result = num1 * num2;
+                    break;
+                case R.id.divisionButton:
+                    op = "/";
+                    result = num1 / num2;
+                    break;
+                default:
+                    break;
+            }
+
+            res.setText(num1 + " " + op + " " + num2 + "=" + result);
         }
+        catch(Exception e){
 
-        res.setText(num1+" "+op+" "+num2+"="+result);
+        }
     }
+
 }
