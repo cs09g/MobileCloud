@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:id="@+id/R"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="50dp"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Seoul Tour"
+            android:id="@+id/textView"
+            android:layout_weight="0.02" />
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Shinchon"
+            android:layout_weight="0.02"
+            android:id="@+id/shinchon"
+            android:background="#ffffffff" />
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Namdaemun"
+            android:id="@+id/namdaemun"
+            android:layout_weight="0.02"
+            android:background="#ffffffff" />
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Dongdaemun"
+            android:id="@+id/dongdaemun"
+            android:layout_weight="0.02"
+            android:background="#ffffffff" />
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Insadong"
+            android:id="@+id/insadong"
+            android:layout_weight="0.02"
+            android:background="#ffffffff" />
+    </LinearLayout>
+</RelativeLayout>
