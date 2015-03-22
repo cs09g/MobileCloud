@@ -8,9 +8,14 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -48,8 +53,9 @@ public class MapsActivity extends FragmentActivity {
             placename.setText("dongdaemun");
         }
         else if(place.equals("insadong")){
-            placename.setText("shinchon");
+            placename.setText("insadong");
         }
+
         mapit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -61,6 +67,7 @@ public class MapsActivity extends FragmentActivity {
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(x, y), 17));
             }
         });
+
         inform.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -130,6 +137,15 @@ public class MapsActivity extends FragmentActivity {
         Criteria criteria = new Criteria();
         Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
         CameraUpdate point = CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 14);
-        mMap.animateCamera(point);
+        mMap.moveCamera(point);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        if((keyCode == KeyEvent.KEYCODE_BACK)){
+            Toast toast = Toast.makeText(getApplication(), "You've just watched " + placename.getText().toString(), Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
